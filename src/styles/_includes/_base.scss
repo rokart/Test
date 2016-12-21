@@ -1,0 +1,64 @@
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-size: 23px;
+    font-family: 'Open Sans', Helvetica;
+    line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+footer {
+    background-color: $white;
+    padding: 2em;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+header,footer {
+    text-align: center;
+}
+
+
+b {
+}
+
+.section-title {
+    font-weight: 700;
+    color: $pink;
+}
+
+p {
+    font-weight: 400;
+}
+
+
+
+p a:hover,
+footer a:hover {
+    color: #80DEEA;
+    transition: color .2s;
+}
+
+
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 2em 0;
+}
+
+li {
+    margin-top: 1.25em;
+    font-weight: 300;
+    color: #37474F;
+}

@@ -1,0 +1,304 @@
+@import 'normalize';
+@import '_includes/_vars';
+@import '_includes/_mixins';
+@import '_includes/_base';
+@import '_includes/_elements';
+
+main, header{
+    max-width: 1605px;
+    margin: 0 auto;
+}
+.wrap {
+    width: 1330px;
+    margin: 0 auto;
+    z-index: 10;
+    position: relative;
+}
+
+section {
+    @include clearfix;
+}
+
+section:last-child {
+    padding-bottom: 3em;
+}
+
+main {
+    background-color: $darkblue;
+    overflow: hidden;
+    position: relative;
+}
+header{
+    @include bgImage('bigheader.jpg');
+    background-position: inherit;
+    background-size: unset;
+    height: 151px;
+}
+.section1{
+    @include bgImage('header_bg.png');
+    height: 1260px;
+    text-align: center;
+    color: $white;
+    h1{
+        padding-top: 60px;
+        font-size: 5.2em;
+    }
+    .teniswaywrap{
+        @include clearfix;
+        margin: 0 auto;
+        width: 56%;
+        .doubleline{
+            background-color: $orange;
+            width: 100%;
+            height: 2px;
+            margin-top: 4px;
+        }
+        .doublelineleft{
+            text-align: left;
+            width: 33%;      
+            float: left;
+            /*            display: inline-block;*/
+
+        }
+        .doublelineright{
+            text-align: right;
+            width: 33%;      
+            float: left;
+            /*            display: inline-block;*/
+
+        }
+
+        h2{
+            color: $orange;
+            font-size: 0.8em;
+            margin-top: -7px;
+            font-family: 'Open Sans', Helvetica;
+            letter-spacing: 3px;
+            float: left;
+            width: 34%;
+        }
+    }
+
+    p{
+        width: 60%;
+        margin: 0 auto;
+        padding-top: 36px;
+        font-size: 0.9em;
+    }
+    .wrap{
+        img{
+            padding-top: 50px;
+        }
+    }
+}
+.section2{
+    .rocket{
+        background-image: url("../files/img/rocket.png");
+        width: 1260px;
+        height: 1348px;
+        position: absolute;
+        right: 0;
+        top: -510px;
+    }
+    position: relative;
+    color: $white;
+    .wrap{
+        margin-bottom: 210px;
+    }
+    .collumn{
+        width: 60%;
+    }
+}
+.section3{
+    .rotated{
+        transform: rotate(-30deg);
+        width: 200%;
+        margin-left: -50%;
+        background-color: $paperwhite; 
+    }
+    .rotatedback{
+        transform: rotate(30deg);
+        position: relative;
+        z-index: 1;
+        width: 50%;
+        margin: 0 auto;
+        @include clearfix;
+        .wrap{
+            position: relative;
+            margin-top: -240px;
+            top: -310px;
+        }
+        .titlewrap{
+            width: 70%;
+            float: right;
+        }
+        span{
+            color: $white;
+            background: $darkorange;
+            box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.26);
+            font-size: 3.1em;
+            padding: 10px 30px;
+            line-height: 1.4;
+            font-family: 'Playfair Display', serif;
+        }
+        .collumn{
+            width: 40%;
+            float: right;
+            padding-top: 90px;
+        }
+        img{
+            position: relative;
+            top: -94px;
+        }
+    }
+}
+.section4{
+    position: relative;
+    z-index: 2;
+    .wrap{
+        padding-bottom: 146px;
+        margin-top: -290px;
+        .tenisphoto{
+            @include bgImage('tenisphoto.jpg');
+            width: 100%;
+            height: 670px;
+            position: relative;
+            img{
+                @extend %center;
+            }
+            p{
+                @extend %center;
+                right: -50%;
+                text-transform: uppercase;
+                width: 290px;
+                height: 130px;
+                color: $white;
+            }
+        }
+
+    }
+    .collumnleft{
+        width: 42%;
+        float: left;
+        img{
+            padding-top: 26px;
+        }
+    }
+    .collumnright{
+        color: $white;
+        width: 50%;
+        float: left;
+    }
+
+}
+.section5{
+
+    padding-top: 80px;
+    .wrap{
+        position: relative;
+        z-index: 1;
+    }
+    .quite{
+        text-align: center;
+    }
+
+    h1{
+        color: $orange;
+        padding-top: 56px;
+        font-size: 1.9em;
+    }
+    .secondh1{
+        color: $white;
+        padding-top: 80px;
+    }
+    .champion{
+        padding-top: 104px;
+        color: $white;
+        font-size: 0.64em;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    .collumn{
+        padding-top: 20px;
+        width: 50%;
+        color: $white;
+    }
+    .z2{
+        z-index: 3;
+    }
+    .agassiwrap{
+        padding-top: 36px;
+        .AGASSI{
+            @include bgImage('agasy.png');
+            width: 1295px;
+            height: 1043px;
+            right: 0;
+            position: absolute;
+            z-index: 2;
+            top: -300px;
+        }
+        .doubleline{
+            background-color: $greyblue;
+            width: 1000px;
+            height: 2px;
+            margin-top: 4px;
+        }
+        position: relative;
+    }
+
+}
+
+.section6{
+    padding-top: 310px;
+    .bannerwrap{
+        background-image: url("../files/img/ballbg.jpg");
+        height: 380px;
+        width: 92%;
+        margin: 0 auto;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+
+        .logo_big{
+            @include bgImage('logo_big.png');
+            width: 392px;
+            height: 98px;
+            position: absolute;
+            top: 153px;
+            left: 5%;
+        }
+        p{
+            position: absolute;
+            width: 33%;
+            left: 39%;
+            top: 120px;
+            color: $white;
+        }
+        .watch{
+            @include bgImage('watch.png');
+            width: 482px;
+            height: 396px;
+            position: absolute;
+            top: 28px;
+            right: -22px;
+        }
+    }
+
+}
+
+
+@include bp-mobile {
+    header h1 {
+        font-size: 2.55em;
+    }
+    .code-block code {
+        display: block;
+    }
+}
+
+@media(max-width:843px) {
+    .btn-download {
+        margin-bottom: 1.5em;
+    }
+}
