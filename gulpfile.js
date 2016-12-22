@@ -45,15 +45,12 @@ var routes = {
         base: baseDirs.src + 'scripts/',
         js: [
             baseDirs.src + 'scripts/vendor/jquery.min.js',
-            baseDirs.src + 'scripts/vendor/jquery-migrate-1.4.1.min.js',
-
             baseDirs.src + 'scripts/vendor/jquery-ui.js',
             baseDirs.src + 'scripts/vendor/TweenMax.js',
             baseDirs.src + 'scripts/vendor/ScrollMagic.js',
             baseDirs.src + 'scripts/vendor/animation.gsap.js',
             baseDirs.src + 'scripts/vendor/debug.addIndicators.js',
             baseDirs.src + 'scripts/index.js',
-            baseDirs.src + 'scripts/main.js'
         ],
         jsmin: baseDirs.assets + 'js/'
     },
