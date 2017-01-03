@@ -13,7 +13,7 @@ var gulp = require('gulp'),
         uglify = require('gulp-uglify'),
         babel = require('gulp-babel'),
         cssimport = require('gulp-cssimport'),
-        sourcemaps = require('gulp-sourcemaps'),
+//        sourcemaps = require('gulp-sourcemaps'),
         critical = require('critical').stream;
 //        gulpbrowserify = require('gulp-browserify');
 
@@ -49,7 +49,7 @@ var routes = {
             baseDirs.src + 'scripts/vendor/TweenMax.js',
             baseDirs.src + 'scripts/vendor/ScrollMagic.js',
             baseDirs.src + 'scripts/vendor/animation.gsap.js',
-            baseDirs.src + 'scripts/vendor/debug.addIndicators.js',
+//            baseDirs.src + 'scripts/vendor/debug.addIndicators.js',
             baseDirs.src + 'scripts/index.js',
         ],
         jsmin: baseDirs.assets + 'js/'
@@ -96,12 +96,12 @@ gulp.task('styles', function () {
                     message: "<%= error.message %>"
                 })
             }))
-            .pipe(sourcemaps.init())
+//            .pipe(sourcemaps.init())
             .pipe(sass({
                 outputStyle: 'compressed'
             }))
             .pipe(autoprefixer('last 10 versions'))
-            .pipe(sourcemaps.write())
+//            .pipe(sourcemaps.write())
             .pipe(cssimport({}))
             .pipe(rename('style.css'))
             .pipe(gulp.dest(routes.styles.css))
@@ -122,7 +122,7 @@ gulp.task('scripts', function () {
                     message: "<%= error.message %>"
                 })
             }))
-            .pipe(sourcemaps.init())
+//            .pipe(sourcemaps.init())
 
             // .pipe(gulpbrowserify())
             .pipe(babel({
@@ -132,7 +132,7 @@ gulp.task('scripts', function () {
             }))
             .pipe(concat('script.js'))
             .pipe(uglify())
-            .pipe(sourcemaps.write())
+//            .pipe(sourcemaps.write())
             .pipe(gulp.dest(routes.scripts.jsmin))
             .pipe(browserSync.stream())
             .pipe(notify({

@@ -2,9 +2,12 @@
 html, body {
     padding: 0;
     margin: 0;
-    font-size: 23px;
+    font-size: 20px;
     font-family: 'Open Sans', Helvetica;
     line-height: 1.4;
+    @include break(1115px){  
+        font-size: 23px;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {

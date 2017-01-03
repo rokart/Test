@@ -5,18 +5,28 @@
 @import '_includes/_elements';
 
 main, header{
-    max-width: 1605px;
+    max-width: 100%;
     margin: 0 auto;
+    @include break(1605px){
+        width: 1605px;
+    }
 }
 .wrap {
-    width: 1330px;
+    width: 100%;
     margin: 0 auto;
     z-index: 10;
     position: relative;
+    @include break(1330px){
+        width: 1330px;
+    }
 }
 
 section {
     @include clearfix;
+    padding: 0 2%;
+    @include break(1605px){
+        padding: 0;
+    }
 }
 
 section:last-child {
@@ -24,15 +34,25 @@ section:last-child {
 }
 
 main {
+
     background-color: $darkblue;
     overflow: hidden;
     position: relative;
 }
 header{
-    @include bgImage('bigheader.jpg');
-    background-position: inherit;
-    background-size: unset;
-    height: 151px;
+    @include bgImage('smallheader.jpg');
+    height: 312px;
+    background-size: initial;
+    position: relative;  
+    width: 100%;
+    background-color: $white;
+    @include break(1605px){
+        @include bgImage('bigheader.jpg');
+        background-size: unset;
+        background-position: center center;
+        height: 151px; 
+        position: relative;
+    }
 }
 .section1{
     @include bgImage('header_bg.png');
@@ -55,42 +75,62 @@ header{
             margin-top: 4px;
         }
         .doublelineleft{
-            text-align: left;
-            width: 33%;      
-            float: left;
-            /*            display: inline-block;*/
+            display: none;
+            @include break(870px){
+                display: block;
+                text-align: left;
+                width: 33%;      
+                float: left;
+            }
+
 
         }
         .doublelineright{
-            text-align: right;
-            width: 33%;      
-            float: left;
-            /*            display: inline-block;*/
-
+            display: none;
+            @include break(870px){
+                display: block;
+                text-align: right;
+                width: 33%;      
+                float: left;
+            }
         }
 
         h2{
+
             color: $orange;
             font-size: 0.8em;
             margin-top: -7px;
             font-family: 'Open Sans', Helvetica;
             letter-spacing: 3px;
             float: left;
-            width: 34%;
+            width: 100%;
             position: relative;
+            @include break(870px){
+                width: 34%;
+            }
         }
     }
 
     p{
-        width: 60%;
-        margin: 0 auto;
-        padding-top: 36px;
-        font-size: 0.9em;
+        display: none;
+        @include break(870px){
+            display: block;
+            width: 60%;
+            margin: 0 auto;
+            padding-top: 36px;
+            font-size: 0.9em;
+        }
+
     }
     .wrap{
         img{
-            padding-top: 50px;
-            position: relative;
+            display: none;
+            @include break(870px){
+                display: inline-block;
+                padding-top: 50px;
+                position: relative;
+            }
+
         }
     }
 }
@@ -112,7 +152,10 @@ header{
         margin-bottom: 210px;
     }
     .collumn{
-        width: 60%;
+        width: 100%;
+        @include break(870px){
+            width: 60%;
+        }
     }
 }
 .section3{
@@ -120,7 +163,10 @@ header{
         transform: rotate(-30deg);
         width: 200%;
         margin-left: -50%;
-        background-color: $paperwhite; 
+        background-color: none; 
+        @include break(870px){
+            background-color: $paperwhite; 
+        }
     }
     .rotatedback{
         transform: rotate(30deg);
@@ -132,10 +178,19 @@ header{
         .wrap{
             position: relative;
             margin-top: -240px;
-            top: -310px;
+            top: -30px;
+            @include break(870px){
+                top: -310px;
+            }
         }
         .titlewrap{
-            width: 70%;
+            @include break(1605px){
+                width: 70%;
+            }
+            @include break(870px){
+                width: 90%;
+            }
+            width: 100%;
             float: right;
         }
 
@@ -150,13 +205,27 @@ header{
             font-family: 'Playfair Display', serif;
         }
         .collumn{
-            width: 40%;
+            width: 100%;
             float: right;
             padding-top: 90px;
+            color: $white;
+            @include break(870px){
+                width: 40%;
+                color: #000;
+            }
         }
         img{
+
+            width: 100%;
+            top: 0px;
             position: relative;
-            top: -94px;
+            @include break(870px){
+                width: 51%;
+                top: -94px;
+            }
+            @include break(1605px){              
+                width: initial;
+            }
         }
     }
     p{
@@ -171,7 +240,10 @@ header{
     }
     .wrap{
         padding-bottom: 146px;
-        margin-top: -290px;
+        margin-top: 0px;
+        @include break(870px){
+            margin-top: -290px;
+        }
         .tenisphoto{
             @include bgImage('tenisphoto.jpg');
             width: 100%;
@@ -180,6 +252,10 @@ header{
             clip:rect(0px 100px 100px 0px);
             img{
                 @extend %center;
+                right: 20%;
+                @include break(870px){
+                    right: 0;
+                }
             }
             p{
                 @extend %center;
@@ -194,17 +270,30 @@ header{
 
     }
     .collumnleft{
-        width: 42%;
-        float: left;
+        width: 100%;
+        @include break(870px){
+            width: 42%;
+            float: left;
+        }
         img{
             padding-top: 26px;
             position: relative;
+            width: 100%;
+            @include break(870px){
+                width: 90%;
+            }
+            @include break(1605px){              
+                width: initial;
+            }
         }
     }
     .collumnright{
         color: $white;
-        width: 50%;
-        float: left;
+        width: 100%;
+        @include break(870px){
+            width: 50%;
+            float: left;
+        }
     }
 
 }
@@ -216,7 +305,10 @@ header{
     }
     .wrap{
         position: relative;
-        z-index: 1;
+        z-index: 5;
+        @include break(870px){
+            z-index: 1;  
+        }
     }
     .quite{
         text-align: center;
@@ -241,9 +333,14 @@ header{
     }
 
     .collumn{
-        padding-top: 20px;
-        width: 50%;
-        color: $white;
+        opacity: 0;
+        @include break(870px){
+            padding-top: 20px;
+            width: 50%;
+            color: $white;
+            opacity: 1;
+        }
+
     }
     .z2{
         z-index: 3;
@@ -252,18 +349,33 @@ header{
         padding-top: 36px;
         .AGASSI{
             @include bgImage('agasy.png');
-            width: 1295px;
+            width: 800px;
             height: 1043px;
             right: 0;
             position: absolute;
             z-index: 2;
-            top: -300px;
+            top: -800px;
+            background-size: contain;
+            @include break(870px){
+                top: -300px;
+            }
+            @include break(1115px){   
+                width: 1000px;
+                background-size: cover;
+            }
+            @include break(1380px){   
+                width: 1295px;
+            }
+
         }
         .doubleline{
-            background-color: $greyblue;
-            width: 1000px;
-            height: 2px;
-            margin-top: 4px;
+
+            @include break(870px){
+                background-color: $greyblue;
+                width: 1000px;
+                height: 2px;
+                margin-top: 4px;
+            }
         }
         position: relative;
     }
@@ -271,42 +383,62 @@ header{
 }
 
 .section6{
-    padding-top: 310px;
-    .bannerwrap{
-        background-image: url("../files/img/ballbg.jpg");
-        height: 380px;
-        width: 92%;
-        margin: 0 auto;
-        background-size: cover;
-        overflow: hidden;
-        z-index: 100;
-        position: relative;
-        
+    display: none;
+    @include break(1115px){   
+        display: block;
+        padding-top: 310px;
 
-        .logo_big{
-            @include bgImage('logo_big.png');
-            width: 392px;
-            height: 98px;
-            position: absolute;
-            top: 153px;
-            left: 5%;
-        }
-        p{
-            position: absolute;
-            width: 33%;
-            left: 39%;
-            top: 120px;
-            color: $white;
-        }
-        .watch{
-            @include bgImage('watch.png');
-            width: 482px;
-            height: 396px;
-            position: absolute;
-            top: 28px;
-            right: -22px;
+        .bannerwrap{
+            background-image: url("../files/img/ballbg.jpg");
+            height: 380px;
+            width: 92%;
+            margin: 0 auto;
+            background-size: cover;
+            overflow: hidden;
+            z-index: 100;
+            position: relative;
+
+
+            .logo_big{
+                @include bgImage('logo_big.png');
+                width: 200px;
+                height: 98px;
+                position: absolute;
+                top: 153px;
+                left: 2%;
+                background-size: contain;
+                @include break(1400px){  
+                    width: 300px;
+                    left: 5%;
+                }
+                @include break(1520px){  
+                    width: 392px;
+                }
+            }
+            p{
+                position: absolute;
+                width: 30%;
+                left: 30%;
+                top: 120px;
+                color: $white;
+                @include break(1400px){  
+                    width: 33%;
+                }
+                @include break(1520px){  
+                    left: 39%;
+                }
+            }
+            .watch{
+                @include bgImage('watch.png');
+                width: 482px;
+                height: 396px;
+                position: absolute;
+                top: 28px;
+                right: -22px;
+            }
         }
     }
+
 
 }
 
